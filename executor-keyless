@@ -1,0 +1,1 @@
+while true; do awk 'BEGIN {srand()} {print rand() "\t" $0}' /usr/share/dict/words | sort -k1,1n | cut -f2- | perl -e 'print join("", sort { rand(1) <=> 0.5 } <>);' | say; sleep 10; done
